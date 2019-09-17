@@ -1,0 +1,94 @@
+/*package whatever //do not write package name here */
+
+import java.io.*;
+
+class Binarysearchtree {
+    class Node
+    {
+        Node left;
+        int data;
+        Node right;
+        Node(int data)
+        {
+            this.data=data;
+            this.left=left;
+            this.right=right;
+        }
+    }
+    private Node root;
+    Binarysearchtree()
+    {
+        root=null;
+    }
+    public void getnewnode(int data)
+    {
+        root=insert(root,data);
+    }
+    Node insert(Node root,int data)
+    {
+        if(root==null)
+        {
+            root=new Node(data);
+            return root;
+        }
+        if(data<root.data)
+        {
+            root.left=insert(root.left,data);
+        }
+        else if(data>root.data)
+        {
+            root.right=insert(root.right,data);
+        }
+        return root;
+    }
+    void inorder()
+    {
+        inorder(root);
+    }
+    private void inorder(Node root)
+    {
+        if(root!=null)
+        {
+            inorder(root.left);
+            System.out.println(root.data);
+            inorder(root.right);
+        }
+    }
+    public static void main (String[] args) {
+        Binarysearchtree tree=new Binarysearchtree();
+        tree.getnewnode(50);
+        tree.getnewnode(30);
+        tree.getnewnode(20);
+        tree.getnewnode(10);
+        tree.getnewnode(60);
+        tree.getnewnode(78);
+        tree.getnewnode(89);
+        tree.inorder();
+        
+    }
+}  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+	
